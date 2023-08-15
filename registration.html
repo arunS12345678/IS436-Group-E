@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deliverable 5</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><h1>
+            <span class="bold">Fitness Tribe</span>
+          </h1></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="registration.html">User Registration</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="joining_a_fitness_challenge.html"
+                >Join a Fitness Challange</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div id="logincontentbox1" class="mb-3">
+        <div align="center">
+          <div id="signuplogintitle" class="lh-1">
+            <h1>
+              <span class="bold">Register User</span>
+            </h1>
+          </div>
+          <div id="newtoalready">
+            Already a member?
+            <a
+              style="color: #50b6ff; text-decoration: underline"
+              href="registration.html"
+              target="_self"
+            >
+              Sign in</a
+            >
+          </div>
+        </div>
+        <div class="mt-6">
+          <div class="loginboxspacing">
+            <p class="ms-2 mb-1 signup-form-label">Username</p>
+            <input
+              class="signupTextInput"
+              id="regusername"
+              type="text"
+              name="username"
+              maxlength="25"
+              tabindex="1"
+              placeholder="  Enter a username"
+            />
+          </div>
+          <div class="loginboxspacing">
+            <p class="ms-2 mb-1 signup-form-label">Email Address</p>
+            <input
+              name="email"
+              type="text"
+              class="signupTextInput"
+              id="myemail"
+              placeholder="  Enter your email"
+              tabindex="1"
+              dir="ltr"
+              maxlength="50"
+            />
+          </div>
+          <div class="loginboxspacing">
+            <p class="ms-2 mb-1 signup-form-label">Password</p>
+            <input
+              type="password"
+              class="signupTextInput"
+              name="password"
+              id="password"
+              maxlength="50"
+              tabindex="1"
+              placeholder="  Password"
+            />
+            <img
+              id="password-check"
+              style="display: none"
+              src="https://www.jefit.com/assets/vendor/themify-icons/SVG/green_check_vector.svg"
+              alt="password check"
+            />
+          </div>
+
+          <div class="loginboxspacing">
+            <input
+              type="password"
+              class="signupTextInput"
+              name="passwordconfirm"
+              id="passwordconfirm"
+              maxlength="50"
+              tabindex="1"
+              placeholder="  Confirm Password"
+            />
+            <img
+              id="password-confirm-check"
+              style="display: none"
+              src="../assets/vendor/themify-icons/SVG/green_check_vector.svg"
+              alt="password confirm check"
+            />
+          </div>
+          <div id="checkpassword" class="mt-4 ms-2">
+            <input
+              type="checkbox"
+              id="password-checkbox"
+              onclick="showPassword()"
+            />
+            <label class="password-checkbox-label" for="password-checkbox"
+              >Show password</label
+            >
+          </div>
+          <div id="captchaboxspacing">
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LcNlLsUAAAAACusbrrw6hLq5W_N-amR_ri46lwP"
+            >
+              <div style="width: 304px; height: 78px">
+                <div>
+                  <iframe
+                    title="reCAPTCHA"
+                    src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcNlLsUAAAAACusbrrw6hLq5W_N-amR_ri46lwP&amp;co=aHR0cHM6Ly93d3cuamVmaXQuY29tOjQ0Mw..&amp;hl=en&amp;v=QybaJej5brGL8d7EvWmfKMZU&amp;size=normal&amp;cb=55jtggc0qptq"
+                    width="304"
+                    height="78"
+                    role="presentation"
+                    name="a-b4o1qsm6orhw"
+                    frameborder="0"
+                    scrolling="no"
+                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                  ></iframe>
+                </div>
+                <textarea
+                  id="g-recaptcha-response"
+                  name="g-recaptcha-response"
+                  class="g-recaptcha-response"
+                  style="
+                    width: 250px;
+                    height: 40px;
+                    border: 1px solid rgb(193, 193, 193);
+                    margin: 10px 25px;
+                    padding: 0px;
+                    resize: none;
+                    display: none;
+                  "
+                ></textarea>
+              </div>
+              <iframe style="display: none"></iframe>
+            </div>
+          </div>
+        </div>
+        <br />
+
+        <input
+          name="Submit"
+          type="submit"
+          class="loginblueButton1"
+          value="Create Account"
+          alt="submit"
+        />
+
+        <input
+          type="hidden"
+          name="s"
+          value="4e3c408fc0469d27c7d712dda2fa5810"
+        />
+        <input type="hidden" name="securitytoken" value="guest" />
+        <input type="hidden" name="do" value="addmember" />
+        <input
+          type="hidden"
+          name="url"
+          value="http://www.jefit.com/my-jefit/profile/"
+        />
+        <input type="hidden" name="agree" value="1" />
+        <input
+          type="hidden"
+          name="emailconfirm"
+          id="emailconfirm"
+          value="a@b.com"
+          dir="ltr"
+          tabindex="1"
+        />
+        <input type="hidden" name="password_md5" />
+        <input type="hidden" name="passwordconfirm_md5" />
+        <input type="hidden" name="discorduser" value="" />
+      </div>
+    </div>
+
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link px-2 text-body-secondary"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="registration.html" class="nav-link px-2 text-body-secondary"
+            >User Registration</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="joining_a_fitness_challenge.html"
+            class="nav-link px-2 text-body-secondary"
+            >Join a Fitness Challange</a
+          >
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
